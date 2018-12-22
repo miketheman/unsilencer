@@ -11,6 +11,7 @@ pytest-mypy = "*"
 pytest-black = "*"
 pytest-isort = "*"
 pytest-mock = "*"
+pytest-env = "*"
 
 [packages]
 requests = "*"

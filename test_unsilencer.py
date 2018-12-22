@@ -98,7 +98,6 @@ def test_unsilencer_reports_when_found(mocker, capsys):
 # making a network call, and if the method ever changes the return value,
 # this test case should also be changed or removed.
 def test_check_suppression_list_for_complaint_exists():
-    unsilencer.MAILGUN_API_KEY = "key-fake"
     responses.add(responses.GET, f"{unsilencer.MAILGUN_API_URL}/complaints/foo@bar.com")
     resp = unsilencer._check_suppression_list("complaints", "foo@bar.com")
     assert resp.status_code == 200
