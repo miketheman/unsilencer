@@ -16,8 +16,8 @@ If the address appears, it will then be removed from each list.
 
 ## Requirements
 
--   Python 3.7
--   Pipenv
+-   [Python](https://www.python.org/) 3.7
+-   [Pipenv](https://github.com/pypa/pipenv)
 
 ## Installation
 
