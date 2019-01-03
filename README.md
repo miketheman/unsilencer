@@ -21,7 +21,7 @@ If the address appears, it will then be removed from each list.
 
 ## Installation
 
-    git clone https://github.com/WarbyParker/unsilencer.git
+    git clone https://github.com/miketheman/unsilencer.git
     cd unsilencer/
     pipenv install
     # Alternately, if you want to develop the code:
