@@ -12,6 +12,8 @@ pytest-black = "*"
 pytest-isort = "*"
 pytest-mock = "*"
 pytest-env = "*"
+mutmut = "*"
+coverage = "<5"
 
 [packages]
 requests = "*"

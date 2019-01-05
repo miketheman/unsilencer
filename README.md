@@ -55,6 +55,12 @@ Execute tests:
 
 Read a blog from [PyBites](https://pybit.es/pytest-coding-100-tests.html) if you're unfamiliar with pytest!
 
+Testing the **tests** can be executed via:
+
+    pipenv run mutmut run
+
+Read more about [mutmut](https://mutmut.readthedocs.io/)!
+
 ## Authors
 
 -   [Mike Fiedler](https://github.com/miketheman)
