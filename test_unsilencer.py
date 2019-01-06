@@ -94,7 +94,7 @@ def test_unsilencer_reports_when_not_found(mocker, capsys):
 
 def test_unsilencer_reports_when_found(mocker, capsys):
     mocker.patch("unsilencer.validate_email", return_value=True)
-    mocker.patch("unsilencer.check_if_listed", return_value=["bounces"])
+    mocker.patch("unsilencer.check_if_listed", return_value=["bounces", "complaints"])
     mocker.patch("unsilencer.remove_from_list")
 
     unsilencer.unsilence("foo@bar.com")
@@ -102,7 +102,7 @@ def test_unsilencer_reports_when_found(mocker, capsys):
     captured = capsys.readouterr()
     assert (
         captured.out == "Email address: foo@bar.com is listed on these lists:\n"
-        "\tbounces\n"
+        "\tbounces,complaints\n"
         "Removing user from list now!!\n"
     )
 
