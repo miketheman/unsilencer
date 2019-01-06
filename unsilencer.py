@@ -77,7 +77,7 @@ def unsilence(email_address: str):
             remove_from_list(suppression_list, email_address)
 
 
-if __name__ == "__main__":  # pragma: no cover
+if __name__ == "__main__":  # pragma: no cover no mutate
     try:
         input = sys.argv[1]
     except IndexError:
