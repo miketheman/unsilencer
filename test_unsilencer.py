@@ -15,6 +15,20 @@ def test_validate_email_valid():
     assert unsilencer.validate_email("foo@bar.com") is True
 
 
+def test_validate_required_settings_succeeds_when_set():
+    # The defaults we use with pytest-env and setup.cfg set the
+    # environment variables for all test suites
+    assert unsilencer.validate_settings() is True
+
+
+def test_validate_required_settings_fails_when_unset(monkeypatch):
+    # As the constants are resolved during module import, reset them to None,
+    # which is the same as if the env var wasn't set in the first place.
+    monkeypatch.setattr("unsilencer.MAILGUN_API_KEY", None)
+    monkeypatch.setattr("unsilencer.MAILGUN_DOMAIN_NAME", None)
+    assert unsilencer.validate_settings() is False
+
+
 def test_validate_email_invalid():
     assert unsilencer.validate_email("foo") is False
     assert unsilencer.validate_email("foo@bar") is False

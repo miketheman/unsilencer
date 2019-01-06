@@ -19,6 +19,12 @@ def validate_email(input: str) -> bool:
     return False
 
 
+def validate_settings() -> bool:
+    if MAILGUN_API_KEY and MAILGUN_DOMAIN_NAME:
+        return True
+    return False
+
+
 def check_if_listed(email_address: str) -> list:
     listings = {}
     # iterate through all 3 functions
@@ -84,4 +90,8 @@ if __name__ == "__main__":  # pragma: no cover no mutate
         print("You must pass an email address!")
         sys.exit(1)
 
-    unsilence(input)
+    if validate_settings():
+        unsilence(input)
+    else:
+        print("Missing required environment variables.")
+        sys.exit(1)
