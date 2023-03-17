@@ -13,7 +13,7 @@ pytest-isort = "*"
 pytest-mock = "*"
 pytest-env = "*"
 mutmut = "*"
-coverage = "<7"
+coverage = "<8"
 
 [packages]
 requests = "*"
